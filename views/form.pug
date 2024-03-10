@@ -1,0 +1,83 @@
+//- doctype html
+//- html(lang="en")
+//-   head
+//-     title= title
+//-   body
+//-     h1= title
+
+//-     // Display messages
+//-     if messages.length > 0
+//-       ul
+//-         each message in messages
+//-           li
+//-             strong #{message.user}:
+//-             | #{message.text} - #{message.added}
+//-     else
+//-       p No messages yet.
+
+//-     // New message form
+//-     form(action="/new" method="post")
+//-       label(for="text") Message Text:
+//-       input(type="text" id="text" name="text")
+//-       label(for="user") User:
+//-       input(type="text" id="user" name="user")
+//-       button(type="submit") Submit
+doctype html
+html(lang="en")
+  head
+    title= title
+    style.
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .title {
+        text-align: center;
+        color: #333;
+      }
+
+      .message-form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .message-form input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .message-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .message-form button:hover {
+        background-color: #0056b3;
+      }
+  body
+    h1.title Enter New Message
+
+    // New message form
+    form(action="/new" method="post" class="message-form")
+      label(for="user") User:
+      input(type="text" id="user" name="user")
+      label(for="text") Message Text:
+      input(type="text" id="text" name="text")
+      button(type="submit") Submit

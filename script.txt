@@ -1,0 +1,5 @@
+npm init
+npm i morgan
+npm install -g nodemon
+npm install --save-dev nodemon
+npm install express
